@@ -7,6 +7,7 @@ services:
     container_name: golang
     ports:
       - 8080:8080
+    restart: unless-stopped
   varnish:
     build:
       context: ./varnish
@@ -18,3 +19,4 @@ services:
       - ./varnish:/etc/varnish/
     ports:
       - 8081:80
+    restart: unless-stopped
