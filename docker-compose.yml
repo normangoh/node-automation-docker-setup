@@ -15,8 +15,8 @@ services:
     container_name: varnish
     tmpfs:
       - /usr/local/var/varnish:exec
-    volumes:
-      - ./varnish:/etc/varnish/
+    # volumes:
+    #   - ./varnish:/etc/varnish/
     ports:
       - 8081:80
     restart: unless-stopped
