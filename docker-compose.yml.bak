@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  golang:
+    build:
+      context: ./golang
+      dockerfile: Dockerfile
+    container_name: golang
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+  varnish:
+    build:
+      context: ./varnish
+      dockerfile: Dockerfile
+    container_name: varnish
+    tmpfs:
+      - /usr/local/var/varnish:exec
+    # volumes:
+    #   - ./varnish:/etc/varnish/
+    ports:
+      - 8081:80
+    restart: unless-stopped
