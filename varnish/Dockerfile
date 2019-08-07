@@ -48,23 +48,23 @@ RUN set -eux; \
     make; \
     make install; \
     \
-    cd /usr/local/src/; \
-    wget -O vmod-cfg.tar.gz "https://github.com/carlosabalde/libvmod-cfg/archive/6.2-7.3.tar.gz"; \
-    mkdir /usr/local/src/vmod-cfg; \
-    tar -zxf /usr/local/src/vmod-cfg.tar.gz -C /usr/local/src/vmod-cfg --strip-components=1; \
-    cd /usr/local/src/vmod-cfg; \
-    \
-    ./autogen.sh; \
-    ./configure; \
-    # make check; \
-    make install; \
-    \
+    # cd /usr/local/src/; \
+    # wget -O vmod-cfg.tar.gz "https://github.com/carlosabalde/libvmod-cfg/archive/6.2-7.3.tar.gz"; \
+    # mkdir /usr/local/src/vmod-cfg; \
+    # tar -zxf /usr/local/src/vmod-cfg.tar.gz -C /usr/local/src/vmod-cfg --strip-components=1; \
+    # cd /usr/local/src/vmod-cfg; \
+    # \
+    # ./autogen.sh; \
+    # ./configure; \
+    # # make check; \
+    # make install; \
+    # \
     cd /; \
     rm -rf /usr/local/src/libcurl.tar.gz; \
     rm -rf /usr/local/src/libcurl; \
     rm -rf /usr/local/src/luajit.tar.gz; \
     rm -rf /usr/local/src/luajit; \
-    rm -rf /usr/local/src/vmod-cfg.tar.gz; \
-    rm -rf /usr/local/src/vmod-cfg; \
+    # rm -rf /usr/local/src/vmod-cfg.tar.gz; \
+    # rm -rf /usr/local/src/vmod-cfg; \
     \
-    apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps $buildDeps
+    # apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps $buildDeps
