@@ -19,7 +19,7 @@ backend rhinoAcme {
 
 sub vcl_recv {
     if (req.http.host ~ settings.get("domain:rhinoAcme")) {
-        set req.backend_hint = rhinoAcme;
+        set req.backend_hint = settings.get("domain:rhinoAcme");
     } else {
         set req.backend_hint = default;
     }

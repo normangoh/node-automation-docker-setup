@@ -1,5 +1,7 @@
 vcl 4.0;
 
+import std;
+
 backend default {
     .host = "192.168.100.119";
     .port = "8000";
